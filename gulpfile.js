@@ -9,7 +9,7 @@ var gulp = require('gulp'),
     notify = require('gulp-notify');
 
 // Where do you store your Sass files?
-var sassDir = 'scss';
+var sassDir = 'src/scss';
 
 // Which partials should Sass compile to?
 var targetCSSDir = 'dist/css';
@@ -17,7 +17,7 @@ var targetCSSDir = 'dist/css';
 
 //Styles
 gulp.task('styles', function(){
-    return gulp.src(sassDir + '/style.scss')
+    return gulp.src(sassDir + '/main.scss')
         .pipe(sass({ style: 'extended' }).on('error', gutil.log))
         .pipe(prefixer('last 10 version'))
         .pipe(gulp.dest(targetCSSDir))
